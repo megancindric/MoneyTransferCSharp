@@ -42,11 +42,11 @@ namespace MoneyTransfer
                 }
                 else if (userInput == "2")
                 {
-
+                    RunTransfer();
                 }
                 else if (userInput == "0")
                 {
-
+                    Console.WriteLine("Exit selected.");
                 }
                 else
                 {
@@ -62,7 +62,48 @@ namespace MoneyTransfer
             {
                 person.DisplayInfo();
             }
-            Console.ReadLine();
+        }
+
+        public void RunTransfer()
+        {
+            Console.WriteLine("Who will be transferring money?");
+            int transferrerIndex = DisplayPlayerChoices();
+            Console.WriteLine($"Who will {players[transferrerIndex].name} be transferring to?");
+            int receiverIndex = DisplayPlayerChoices();
+            if(transferrerIndex == receiverIndex)
+            {
+                Console.WriteLine("Error: You cannot transfer money between the same person!");
+            }
+            else
+            {
+Console.WriteLine($"Initiating transfer from {players[transferrerIndex].name} to {players[receiverIndex].name}...");
+            int transferAmount = DetermineTransferAmount();
+            players[transferrerIndex].TransferMoney(players[receiverIndex],transferAmount);
+            }
+            
+        }
+
+        public int DisplayPlayerChoices()
+        {
+            int i = 0;
+            foreach(Person person in players)
+            {
+                Console.WriteLine($"Press {i} to select {person.name}.");
+                i++;
+            }
+            int user_choice = Int32.Parse(Console.ReadLine());
+            while(user_choice >0 && user_choice >= players.Count)
+            {
+                Console.WriteLine("Invalid selection!  Please enter a choice from the menu above!");
+                user_choice = Int32.Parse(Console.ReadLine());
+            }
+            return user_choice;
+        }
+        public int DetermineTransferAmount()
+        {
+            Console.WriteLine("Please enter the amount to be transferred: ");
+            int amount = Int32.Parse(Console.ReadLine());
+            return amount;
         }
     }
 }

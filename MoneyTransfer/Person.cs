@@ -27,13 +27,13 @@ namespace MoneyTransfer
         {
             Console.WriteLine($"{name} has received ${cash}!");
             wallet.money += cash;
-            Console.WriteLine($"{name} now has ${cash} available in their wallet!");
+            Console.WriteLine($"{name} now has ${wallet.money} available in their wallet!");
             Console.ReadLine();
         }
 
         internal void TransferMoney(Person receiver, int transferAmount)
         {
-            if(transferAmount < wallet.money)
+            if(transferAmount > wallet.money)
             {
                 Console.WriteLine($"Insufficient funds!  You cannot transfer ${transferAmount} as you only have ${wallet.money} available!");
             }

@@ -12,7 +12,7 @@ namespace MoneyTransfer
 
         public Wallet(int money)
         {
-
+            this.money = money;
         }
     }
 }

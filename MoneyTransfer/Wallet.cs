@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MoneyTransfer
 {
-    internal class Wallet
+    public class Wallet
     {
         public int money;
 

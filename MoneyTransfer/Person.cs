@@ -28,7 +28,7 @@ namespace MoneyTransfer
             Console.WriteLine($"{name} has received ${cash}!");
             wallet.money += cash;
             Console.WriteLine($"{name} now has ${wallet.money} available in their wallet!");
-            Console.ReadLine();
+           // Console.ReadLine();
         }
 
         public void TransferMoney(Person receiver, int transferAmount)
@@ -44,6 +44,11 @@ namespace MoneyTransfer
                 Console.WriteLine($"{name} transfered ${transferAmount} and has ${wallet.money} available!");
                 receiver.AcceptMoney(transferAmount);
             }
+        }
+
+        public int GetCashAmount()
+        {
+            return wallet.money;
         }
     }
 }

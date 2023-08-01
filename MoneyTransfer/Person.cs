@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MoneyTransfer
 {
-    internal class Person
+    public class Person
     {
         public string name;
         private Wallet wallet;
@@ -18,12 +18,12 @@ namespace MoneyTransfer
 
         }
 
-        internal void DisplayInfo()
+        public void DisplayInfo()
         {
             Console.WriteLine($"{name} currently has ${wallet.money} available in their wallet!\n");
         }
 
-        internal void AcceptMoney(int cash)
+        public void AcceptMoney(int cash)
         {
             Console.WriteLine($"{name} has received ${cash}!");
             wallet.money += cash;
@@ -31,7 +31,7 @@ namespace MoneyTransfer
             Console.ReadLine();
         }
 
-        internal void TransferMoney(Person receiver, int transferAmount)
+        public void TransferMoney(Person receiver, int transferAmount)
         {
             if(transferAmount > wallet.money)
             {

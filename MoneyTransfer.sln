@@ -5,7 +5,7 @@ VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoneyTransfer", "MoneyTransfer\MoneyTransfer.csproj", "{1906FE22-9C4F-43F3-A09B-18AEE7661A08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyTransferTests", "MoneyTransferTests\MoneyTransferTests.csproj", "{3121996C-2FE3-4276-9A73-8AF50829DF6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoneyTransferTests", "MoneyTransferTests\MoneyTransferTests.csproj", "{3121996C-2FE3-4276-9A73-8AF50829DF6E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
